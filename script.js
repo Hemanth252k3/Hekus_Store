@@ -242,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
+            const age = document.getElementById('age').value;
 
             if (name === '' || email === '' || message === '') {
                 alert('Please fill in all fields.');
@@ -252,6 +253,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             alert('Message sent successfully! (This is a placeholder)');
+            gtag("event" , "contact_form_event" , {
+                user_name: name,
+                user_email: email,
+                user_email_length : email.length,
+                user_message: message,
+                user_age: age,
+                submission_count: 1
+            })
+            console.log("event sent successfully")
             contactForm.reset();
         });
     }

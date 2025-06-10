@@ -332,6 +332,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const productid = document.getElementById('product_id').value;
         const message = document.getElementById('message').value;
 
+        gtag('event','contactform_event',{
+             user_name: name,
+             user_email: email,
+             user_age: age,
+             user_productid: product_id,
+             user_message: message,
+             submission_count: 1
+    
+         })
+    console.log('contactform_event sent successfull')
+
         if (name && email && message) {
             // Simulate success
             showFormMessage('Thank you for your message! We will get back to you soon.', 'success');
@@ -354,16 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         console.log("contact from is submitted");
 
-        gtag('event','contactform_event',{
-             user_name: name,
-             user_email: email,
-             user_age: age,
-             user_productid: product_id,
-             user_message: message,
-             submission_count: 1
-    
-         })
-    console.log('contactform_event sent successfull')
+        
     
 
     function showFormMessage(message, type) {

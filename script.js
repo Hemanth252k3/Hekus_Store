@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cartItemElement.classList.add('cart-item');
                 cartItemElement.dataset.id = item.id;
                 cartItemElement.innerHTML = `
-                    <img src="images/${item.image}" alt="${item.name}">
+                    <img src="${item.image}" alt="${item.name}">
                     <div class="cart-item-details">
                         <h4>${item.name}</h4>
                         <p>Quantity: ${item.quantity}</p>

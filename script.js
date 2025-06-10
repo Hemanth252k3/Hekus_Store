@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => { 
+document.addEventListener('DOMContentLoaded', () => {
     // --- Product Data ---
     const products = [
         // All product image paths now correctly start with 'Retail_Website/'
         { id: 1, name: 'Movado series 800', price: 199.99, image: './Mens_Watch/Movado_series_800.jfif', category: 'mens_watch' },
         { id: 2, name: 'ALexandre Christie', price: 99.50, image: './Womens_Watch/ALexandre_Christie.jfif', category: 'womens_watch' },
-        { id: 3, name: 'Daniel Klein', price: 149.00, image: './Womens_Watch/Daniel_Klein_Women_watch.jpg', category: 'womens_watch' },
+        { id: 3, name: 'Daniel Klein', price: 149.00, image: './Womens_Watch/Daniel_Klein_Womenwatch.jpg', category: 'womens_watch' },
         { id: 4, name: 'Luminox master', price: 75.00, image: './Mens_Watch/Luminox_master.jfif', category: 'mens_watch' },
         { id: 5, name: 'Boat Smart_Watch', price: 120.00, image: './Children_watch/Boat.jfif', category: 'children' },
         { id: 6, name: 'Versace men', price: 50.00, image: './Mens_Watch/Versace_men.jfif', category: 'mens_watch' },
@@ -328,20 +328,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Simulate form validation/submission
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
-        const age = document.getElementById('age').value;
-        const productid = document.getElementById('product_id').value;
         const message = document.getElementById('message').value;
+        const productid = document.getElementById('product_id').value;
+        const age = document.getElementById('age').value;
 
-        gtag('event','contactform_event',{
-             user_name: name,
-             user_email: email,
-             user_age: age,
-             user_productid: product_id,
-             user_message: message,
-             submission_count: 1
-    
-         })
-    console.log('contactform_event sent successfull')
+        gtag( 'event', 'contactform_event',{
+            user_name: name,
+            user_age: age, 
+            user_email: email, 
+            user_productid: productid, 
+            user_message: message,
+            submission_count: 1 
+        })
+
+        console.log('contactform_event sent successfully')
 
         if (name && email && message) {
             // Simulate success
@@ -351,22 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Simulate error
             showFormMessage('Please fill in all required fields.', 'error');
         }
-
-        //convert product ID to number, handling empty/invalid input
-        let productId = null;
-        if(productid !== ''){
-            const parseproductid =parseInt(productid);
-            if (!isNaN(parseproductid)) {
-                productid = parseproductid;
-            } else{
-                showMessage("Please enter valid numeric Product ID.", 4000);
-                return;
-            }
-        }
-        console.log("contact from is submitted");
-
-        
-    
+    });
 
     function showFormMessage(message, type) {
         formMessage.textContent = message;
@@ -459,5 +444,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
 });

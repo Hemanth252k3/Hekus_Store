@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <script>//<![CDATA[
+      var s = false;
+      function l() {
+        setTimeout(f, 10000);
+        if (document.referrer) {
+          try {
+            var pm = /(^|&|\?)px=([^&]*)(&|$)/i;
+            var px = window.location.href.match(pm);
+            var rs = document.referrer;
+            if (px != null) {
+              if (rs.match(pm))
+                rs = rs.replace(pm, "$1px=" + px[2] + "$3");
+              else if (rs.indexOf("?") != -1)
+                rs = rs + "&px=" + px[2];
+              else
+                rs = rs + "?px=" + px[2];
+            }
+            history.replaceState({}, "Bing", rs);
+            window.addEventListener("pageshow", function(e) { if (e.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2)) window.location.reload(); });
+            s = true;
+            setTimeout(r, 10);
+            return;
+          } catch (e) {}
+        }
+        r();
+      }
+      function r() {
+        var u = "/shop/productpage?q=children+watches&filters=scenario%3a%2217%22+gType%3a%2212%22+gId%3a%22318388870517%22+gIdHash%3a%220%22+gGlobalOfferIds%3a%22318388870517%22+AucContextGuid%3a%220%22+GroupEntityId%3a%22318388870517%22+NonSponsoredOffer%3a%22True%22&productpage=true&FORM=SHPPDP&browse=true&cvid=17A29FCE8008483A8AFF01EF81330F96";
+        if (s)
+          window.location.href = u;
+        else
+          window.location.replace(u);
+      }
+      function f() {
+        document.getElementById("fb").style.display = "block";
+      }
+      //]]>
+    </script>
+  </head>
+  <body onload="l()">
+    <div id="fb" style="display: none">
+      Please <a href="https://www.bing.com/ck/a?!&&p=540d613d1941b78c531d2d2807d54a238e2eb8235ee3a419dacb7e2cdec962d7JmltdHM9MTc0ODgyMjQwMA&ptn=3&ver=2&hsh=4&fclid=3e21185d-a5ec-6e88-06d9-0dbda48e6f6c&u=a1L3Nob3AvcHJvZHVjdHBhZ2U_cT1jaGlsZHJlbit3YXRjaGVzJmZpbHRlcnM9c2NlbmFyaW8lM2ElMjIxNyUyMitnVHlwZSUzYSUyMjEyJTIyK2dJZCUzYSUyMjMxODM4ODg3MDUxNyUyMitnSWRIYXNoJTNhJTIyMCUyMitnR2xvYmFsT2ZmZXJJZHMlM2ElMjIzMTgzODg4NzA1MTclMjIrQXVjQ29udGV4dEd1aWQlM2ElMjIwJTIyK0dyb3VwRW50aXR5SWQlM2ElMjIzMTgzODg4NzA1MTclMjIrTm9uU3BvbnNvcmVkT2ZmZXIlM2ElMjJUcnVlJTIyJnByb2R1Y3RwYWdlPXRydWUmRk9STT1TSFBQRFAmYnJvd3NlPXRydWUmY3ZpZD0xN0EyOUZDRTgwMDg0ODNBOEFGRjAxRUY4MTMzMEY5Ng&ntb=F">click here</a> if the page does not redirect automatically ...
+    </div>
+  </body>
+</html>

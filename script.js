@@ -328,6 +328,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Simulate form validation/submission
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
+        const age = document.getElementById('age').value;
+        const product_id = document.getElementById('product_id').value;
         const message = document.getElementById('message').value;
 
         if (name && email && message) {
@@ -338,6 +340,30 @@ document.addEventListener('DOMContentLoaded', () => {
             // Simulate error
             showFormMessage('Please fill in all required fields.', 'error');
         }
+
+        //convert product ID to number, handling empty/invalid input
+        let product_id = null;
+        if(product_id !== ''){
+            const parseproductid =parseInt(product_id);
+            if (!isNaN(parseproductid)) {
+                product_id = parseproductid;
+            } else{
+                showMessage("Please enter valid numeric Product ID.", 4000);
+                return;
+            }
+        }
+        console.log("contact from is submitted");
+
+        gtag('event','contactform_event,{
+             user_name: name,
+             user_email: email,
+             user_age: age,
+             user_productid: product_id,
+             user_message: message,
+             submission_count: 1
+    })
+
+    console.log('contactform_event sent successfullyyyyyyyyyy')
     });
 
     function showFormMessage(message, type) {

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Product Data ---
     const products = [
         // ALL product image paths now correctly start with './' for consistent relative paths
-        { id: 1, name: 'Movado series 800', price: 199.99, image: './Mens_Watch/Movado_series_800.jfif', category: 'mens_watch' },
+        { id: 1, name: 'zoop', price: 34.18, image: './Children_watch/zoop.jfif', category: 'children'},
         { id: 2, name: 'ALexandre Christie', price: 99.50, image: './Womens_Watch/ALexandre_Christie.jfif', category: 'womens_watch' },
         { id: 3, name: 'Daniel Klein', price: 149.00, image: './Womens_Watch/Daniel_Klein_Women_watch.jpg', category: 'womens_watch' },
         { id: 4, name: 'Luminox master', price: 75.00, image: './Mens_Watch/Luminox_master.jfif', category: 'mens_watch' },

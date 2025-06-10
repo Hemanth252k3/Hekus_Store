@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { 
     // --- Product Data ---
     const products = [
         // All product image paths now correctly start with 'Retail_Website/'
@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const age = document.getElementById('age').value;
-        const product_id = document.getElementById('product_id').value;
+        const productid = document.getElementById('product_id').value;
         const message = document.getElementById('message').value;
 
         if (name && email && message) {
@@ -342,11 +342,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         //convert product ID to number, handling empty/invalid input
-        let product_id = null;
-        if(product_id !== ''){
-            const parseproductid =parseInt(product_id);
+        let productId = null;
+        if(productid !== ''){
+            const parseproductid =parseInt(productid);
             if (!isNaN(parseproductid)) {
-                product_id = parseproductid;
+                productid = parseproductid;
             } else{
                 showMessage("Please enter valid numeric Product ID.", 4000);
                 return;
@@ -354,17 +354,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         console.log("contact from is submitted");
 
-        gtag('event','contactform_event,{
+        gtag('event','contactform_event',{
              user_name: name,
              user_email: email,
              user_age: age,
              user_productid: product_id,
              user_message: message,
              submission_count: 1
-    })
-
-    console.log('contactform_event sent successfullyyyyyyyyyy')
-    });
+    
+         })
+    console.log('contactform_event sent successfull')
+    
 
     function showFormMessage(message, type) {
         formMessage.textContent = message;
@@ -457,4 +457,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
 });

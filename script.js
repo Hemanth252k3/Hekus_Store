@@ -1,33 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Product Data ---
     const products = [
-        // Original products
-        { id: 1, name: 'Movado series 800', price: 599.99, image: 'Mens_Watch/Movado series 800.jfif', category: 'mens_watch' },
-        { id: 2, name: 'ALexandre Christie', price: 99.50, image: 'Womens_Watch/ALexandre Christie.jfif', category: 'womens_watch' },
-        { id: 3, name: 'Daniel Klein', price: 149.00, image: 'Womens_Watch/Daniel Klein Women watch.jpg', category: 'womens_watch' },
-        { id: 4, name: 'Luminox master', price: 75.00, image: 'Mens_Watch/Luminox master.jfif', category: 'mens_watch' },
-        { id: 5, name: 'Boat Smart_Watch', price: 120.00, image: 'Children_watch/Boat.jfif', category: 'children' },
-        { id: 6, name: 'Versace men', price: 350.00, image: 'Mens_Watch/Versace men.jfif', category: 'mens_watch' },
-        { id: 7, name: 'Alexandre Christie', price: 450.00, image: 'couple watches/Alexandre Christie.jfif', category: 'couple_watch' },
-        { id: 8, name: 'Fossil', price: 360.00, image: 'couple watches/Fossil.jfif', category: 'couple_watch' },
-        { id: 9, name: 'Casio', price: 299.99, image: 'Children_watch/Casio.jfif', category: 'children' },
-        { id: 10, name: 'Megir', price: 89.00, image: 'Womens_Watch/Megir Women Watch.jpg', category: 'womens_watch' },
-        // Newly added watch products (ensure image paths are correct relative to index.html)
-        { id: 11, name: 'Rolex ', price: 599.99, image: 'Mens_Watch/watch.webp', category: 'mens_watch' },
-        { id: 12, name: 'Fossil ', price: 672.99, image: 'Mens_Watch/FOSSIL mens watch.jfif', category: 'mens_watch' },
-        { id: 13, name: 'RElŌGĪO ', price: 390.00, image: 'Mens_Watch/RElŌGĪO Mens Watch.jpg', category: 'mens_watch' },
-        { id: 14, name: 'OMEGA ', price: 280.97, image: 'Mens_Watch/OMEGA Mens watch.jfif', category: 'mens_watch' },
-        { id: 15, name: 'TITAN EDGE', price: 440.30, image: 'Mens_Watch/TItan Mens watch.jfif', category: 'mens_watch' },
-        { id: 16, name: 'Chopard Happy Sport Automatic', price: 720.30, image: 'Womens_Watch/Chopard Happy Sport Automatic.jfif', category: 'womens_watch'},
-        { id: 17, name: 'Maserati Epoca', price: 320.70, image: 'couple watches/Maserati Epoca.jfif',category: 'couple_watch'},
-        { id: 18, name: 'Revogue', price: 740.45, image: 'couple watches/Revogue.jfif', category: 'couple_watch'},
-        { id: 19, name: 'TITAN Neo', price: 320.45, image: 'couple watches/TITAN Neo.jfif', category: 'couple_watch'},
-        { id: 20, name: 'TITAN Bandhan', price:420.23, image: 'couple watches/TITAN.jfif', category: 'couple_watch'},
-        { id: 21, name: 'Farsler', price: 320.22, image: 'Children_watch/Farsler.jfif', category:'children'},
-        { id: 22, name: 'Tenockkids', price: 322.41, image: 'Children_watch/Tenockkids.jfif', category: 'children'},
-        { id: 23, name: 'zoop', price: 234.18, image: 'Children_watch/zoop.jfif', category: 'children'}
+        // All product image paths now correctly start with 'Retail_Website/'
+        { id: 1, name: 'Movado series 800', price: 199.99, image: './Mens_Watch/Movado_series_800.jfif', category: 'mens_watch' },
+        { id: 2, name: 'ALexandre Christie', price: 99.50, image: './Womens_Watch/ALexandre_Christie.jfif', category: 'womens_watch' },
+        { id: 3, name: 'Daniel Klein', price: 149.00, image: './Womens_Watch/Daniel_Klein_Women_watch.jpg', category: 'womens_watch' },
+        { id: 4, name: 'Luminox master', price: 75.00, image: './Mens_Watch/Luminox_master.jfif', category: 'mens_watch' },
+        { id: 5, name: 'Boat Smart_Watch', price: 120.00, image: './Children_watch/Boat.jfif', category: 'children' },
+        { id: 6, name: 'Versace men', price: 50.00, image: './Mens_Watch/Versace_men.jfif', category: 'mens_watch' },
+        { id: 7, name: 'Alexandre Christie', price: 45.00, image: './couple watches/Alexandre_Christie.jfif', category: 'couple_watch' },
+        { id: 8, name: 'Fossil', price: 60.00, image: './couple watches/Fossil.jfif', category: 'couple_watch' },
+        { id: 9, name: 'Casio', price: 299.99, image: './Children_watch/Casio.jfif', category: 'children' },
+        { id: 10, name: 'Megir', price: 89.00, image: './Womens_Watch/Megir_Women_Watch.jpg', category: 'womens_watch' },
+        { id: 11, name: 'Rolex ', price: 99.99, image: './Mens_Watch/watch.webp', category: 'mens_watch' },
+        { id: 12, name: 'Fossil ', price: 172.99, image: './Mens_Watch/FOSSIL_mens_watch.jfif', category: 'mens_watch' },
+        { id: 13, name: 'RElŌGĪO ', price: 39.00, image: './Mens_Watch/RElŌGĪO_Mens_Watch.jpg', category: 'mens_watch' },
+        { id: 14, name: 'OMEGA ', price: 80.97, image: './Mens_Watch/OMEGA_Mens_watch.jfif', category: 'mens_watch' },
+        { id: 15, name: 'TITAN EDGE', price: 40.30, image: './Mens_Watch/TItan_Mens_watch.jfif', category: 'mens_watch' },
+        { id: 16, name: 'Chopard Happy Sport Automatic', price: 72.30, image: './Womens_Watch/Chopard_Happy_Sport_Automatic.jfif', category: 'womens_watch'},
+        { id: 17, name: 'Maserati Epoca', price: 20.70, image: './couple watches/Maserati_Epoca.jfif',category: 'couple_watch'},
+        { id: 18, name: 'Revogue', price: 74.45, image: './couple watches/Revogue.jfif', category: 'couple_watch'},
+        { id: 19, name: 'TITAN Neo', price: 32.45, image: './couple watches/TITAN_Neo.jfif', category: 'couple_watch'},
+        { id: 20, name: 'TITAN Bandhan', price:20.23, image: './couple watches/TITAN.jfif', category: 'couple_watch'},
+        { id: 21, name: 'Farsler', price: 32.22, image: './Children_watch/Farsler.jfif', category:'children'},
+        { id: 22, name: 'Tenockkids', price: 22.41, image: './Children_watch/Tenockkids.jfif', category: 'children'},
+        { id: 23, name: 'zoop', price: 34.18, image: './Children_watch/zoop.jfif', category: 'children'}
     ];
 
+
+    // --- DOM Elements ---
+    const preloader = document.getElementById('preloader');
     const productGrid = document.getElementById('productGrid');
     const cartButton = document.getElementById('cartButton');
     const cartItemCountSpan = document.getElementById('cartItemCount');
@@ -37,290 +39,396 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartTotalSpan = document.getElementById('cartTotal');
     const clearCartButton = document.getElementById('clearCartButton');
     const checkoutButton = document.getElementById('checkoutButton');
-    const body = document.body; // Reference to the body for dark mode and overflow
+    const body = document.body;
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const contactForm = document.querySelector('.contact-form');
+    const formMessage = document.getElementById('formMessage'); // For form submission messages
+    const shopNowButton = document.querySelector('.hero-section .btn-primary');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const filterButtons = document.querySelectorAll('.filter-btn');
 
-    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || []; // Load cart from localStorage
+    // --- Cart State ---
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // --- Functions ---
 
-    // 1. Render Products to the Grid
+    // --- Preloader Logic ---
+    window.addEventListener('load', () => {
+        preloader.classList.add('hidden');
+    });
+
+    // --- Dark/Light Mode Toggling ---
+    // Check local storage for theme preference, default to dark-mode if not found
+    const currentTheme = localStorage.getItem('theme') || 'dark-mode';
+    body.classList.add(currentTheme);
+    updateDarkModeToggleIcon(currentTheme);
+
+    darkModeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light-mode');
+            updateDarkModeToggleIcon('light-mode');
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode');
+            updateDarkModeToggleIcon('dark-mode');
+        }
+    });
+
+    function updateDarkModeToggleIcon(theme) {
+        if (theme === 'dark-mode') {
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
+        } else {
+            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
+        }
+    }
+
+
+    // --- Smooth Scrolling for Navigation ---
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                // Remove 'active' from all links
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                // Add 'active' to the clicked link
+                link.classList.add('active');
+
+                // Scroll to the target section
+                window.scrollTo({
+                    top: targetSection.offsetTop - (document.querySelector('.main-header').offsetHeight), // Adjust for sticky header
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Highlight active nav link on scroll
+    window.addEventListener('scroll', () => {
+        let current = '';
+        document.querySelectorAll('section').forEach(section => {
+            const sectionTop = section.offsetTop - (document.querySelector('.main-header').offsetHeight + 50); // Offset for header + buffer
+            if (scrollY >= sectionTop) {
+                current = '#' + section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === current) {
+                link.classList.add('active');
+            }
+        });
+
+        // Show/hide cart button on scroll
+        if (window.scrollY > document.querySelector('.hero-section').offsetHeight / 2) {
+            cartButton.classList.add('visible');
+        } else {
+            cartButton.classList.remove('visible');
+        }
+    });
+
+
+    // --- Product Rendering ---
     function renderProducts(filteredProducts = products) {
         productGrid.innerHTML = ''; // Clear existing products
         if (filteredProducts.length === 0) {
-            productGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center;">No products found in this category.</p>';
+            productGrid.innerHTML = '<p class="no-products-message">No products found for this category.</p>';
             return;
         }
 
         filteredProducts.forEach(product => {
             const productCard = document.createElement('div');
             productCard.classList.add('product-card');
-            productCard.setAttribute('data-category', product.category); // Add category data attribute
+            productCard.dataset.id = product.id;
 
             productCard.innerHTML = `
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
                 <p class="price">$${product.price.toFixed(2)}</p>
-                <button class="btn btn-secondary add-to-cart" data-product-id="${product.id}">Add to Cart</button>
+                <button class="add-to-cart-btn btn-primary">Add to Cart</button>
             `;
             productGrid.appendChild(productCard);
         });
-        attachAddToCartListeners(); // Re-attach listeners after rendering products
     }
 
-    // 2. Attach Add to Cart Listeners (using event delegation for efficiency)
-    function attachAddToCartListeners() {
-        // Since products are re-rendered, we attach to the parent and check the target
-        productGrid.removeEventListener('click', handleProductGridClick); // Remove old listener first
-        productGrid.addEventListener('click', handleProductGridClick);
-    }
+    // --- Product Filtering ---
+    filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Remove 'active' from all filter buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add 'active' to the clicked button
+            e.target.classList.add('active');
 
-    function handleProductGridClick(event) {
-        if (event.target.classList.contains('add-to-cart')) {
-            const productId = parseInt(event.target.dataset.productId);
-            const productToAdd = products.find(p => p.id === productId);
+            const category = e.target.dataset.category;
+            let filtered = [];
+            if (category === 'all') {
+                filtered = products;
+            } else {
+                filtered = products.filter(product => product.category === category);
+            }
+            renderProducts(filtered);
+            // Re-apply scroll reveal after filtering/rendering
+            applyScrollReveal();
+        });
+    });
 
-            if (productToAdd) {
-                addToCart(productToAdd);
+    // Initial render of all products
+    renderProducts();
+
+    // --- Add to Cart Logic ---
+    productGrid.addEventListener('click', (e) => {
+        if (e.target.classList.contains('add-to-cart-btn')) {
+            const productCard = e.target.closest('.product-card');
+            const productId = parseInt(productCard.dataset.id);
+            const product = products.find(p => p.id === productId);
+
+            if (product) {
+                const existingCartItem = cart.find(item => item.id === productId);
+                if (existingCartItem) {
+                    existingCartItem.quantity++;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+                saveCart();
+                updateCartUI();
+                showToastNotification(`${product.name} added to cart!`);
+                cartButton.classList.add('bouncing');
+                setTimeout(() => {
+                    cartButton.classList.remove('bouncing');
+                }, 600); // Remove bounce class after animation
             }
         }
-    }
+    });
 
-    // 3. Add to Cart Functionality
-    function addToCart(product) {
-        const existingItem = cart.find(item => item.id === product.id);
+    // --- Cart Modal Functionality ---
+    cartButton.addEventListener('click', () => {
+        cartModal.classList.add('open');
+        body.style.overflow = 'hidden'; // Prevent scrolling background
+        updateCartUI();
+    });
 
-        if (existingItem) {
-            existingItem.quantity++;
-        } else {
-            cart.push({ ...product, quantity: 1 });
+    closeCartButton.addEventListener('click', () => {
+        cartModal.classList.add('closing'); // Add closing class for animation
+        setTimeout(() => {
+            cartModal.classList.remove('open', 'closing');
+            body.style.overflow = ''; // Restore scrolling
+        }, 400); // Match CSS transition duration
+    });
+
+    // Close cart modal if clicking outside content
+    cartModal.addEventListener('click', (e) => {
+        if (e.target === cartModal) {
+            cartModal.classList.add('closing');
+            setTimeout(() => {
+                cartModal.classList.remove('open', 'closing');
+                body.style.overflow = '';
+            }, 400);
         }
-        saveCartToLocalStorage();
-        updateCartDisplay();
-        showCartButton();
-        // Removed alert for smoother UX, consider a small pop-up or animation instead
-        // alert(`"${product.name}" added to cart!`);
-    }
+    });
 
-    // 4. Update Cart Display (in modal/sidebar)
-    function updateCartDisplay() {
-        cartItemsContainer.innerHTML = ''; // Clear previous items
+    function updateCartUI() {
+        cartItemsContainer.innerHTML = '';
         let total = 0;
 
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p class="empty-cart-message">Your cart is empty.</p>';
-            hideCartButton(); // Hide cart button if cart is empty
+            cartItemCountSpan.textContent = '0';
         } else {
             cart.forEach(item => {
-                const cartItemDiv = document.createElement('div');
-                cartItemDiv.classList.add('cart-item');
-                cartItemDiv.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
+                const cartItemElement = document.createElement('div');
+                cartItemElement.classList.add('cart-item');
+                cartItemElement.dataset.id = item.id;
+                cartItemElement.innerHTML = `
+                    <img src="images/${item.image}" alt="${item.name}">
                     <div class="cart-item-details">
                         <h4>${item.name}</h4>
-                        <p>Qty: ${item.quantity} x $${item.price.toFixed(2)}</p>
+                        <p>Quantity: ${item.quantity}</p>
                     </div>
-                    <span class="cart-item-price">$${(item.quantity * item.price).toFixed(2)}</span>
-                    <button class="remove-item-btn" data-product-id="${item.id}"><i class="fas fa-trash-alt"></i></button>
+                    <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+                    <button class="remove-item-btn" aria-label="Remove ${item.name}"><i class="fas fa-trash"></i></button>
                 `;
-                cartItemsContainer.appendChild(cartItemDiv);
-                total += item.quantity * item.price;
+                cartItemsContainer.appendChild(cartItemElement);
+                total += item.price * item.quantity;
             });
-            showCartButton(); // Ensure button is visible if items exist
+            cartItemCountSpan.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
         }
-
         cartTotalSpan.textContent = total.toFixed(2);
-        cartItemCountSpan.textContent = cart.reduce((sum, item) => sum + item.quantity, 0); // Update total item count
     }
 
-    // 5. Remove from Cart
-    function removeFromCart(productId) {
-        cart = cart.filter(item => item.id !== productId);
-        saveCartToLocalStorage();
-        updateCartDisplay();
-    }
+    // Remove item from cart
+    cartItemsContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove-item-btn') || e.target.closest('.remove-item-btn')) {
+            const button = e.target.closest('.remove-item-btn');
+            const cartItemElement = button.closest('.cart-item');
+            const productId = parseInt(cartItemElement.dataset.id);
 
-    // 6. Clear Cart
-    function clearCart() {
+            // Animate removal
+            cartItemElement.style.opacity = '0';
+            cartItemElement.style.transform = 'translateX(-20px)';
+            cartItemElement.style.height = '0';
+            cartItemElement.style.padding = '0';
+            cartItemElement.style.marginBottom = '0';
+            cartItemElement.style.overflow = 'hidden';
+
+            setTimeout(() => {
+                cart = cart.filter(item => item.id !== productId);
+                saveCart();
+                updateCartUI();
+                if (cart.length === 0) {
+                    // If cart becomes empty, add the message immediately
+                    cartItemsContainer.innerHTML = '<p class="empty-cart-message">Your cart is empty.</p>';
+                }
+            }, 300); // Allow animation to play
+        }
+    });
+
+    // Clear entire cart
+    clearCartButton.addEventListener('click', () => {
         if (confirm('Are you sure you want to clear your cart?')) {
             cart = [];
-            saveCartToLocalStorage();
-            updateCartDisplay();
-            hideCartButton();
-        }
-    }
-
-    // 7. Save Cart to Local Storage
-    function saveCartToLocalStorage() {
-        localStorage.setItem('shoppingCart', JSON.stringify(cart));
-    }
-
-    // 8. Show/Hide Cart Button
-    function showCartButton() {
-        cartButton.classList.add('visible');
-    }
-
-    function hideCartButton() {
-        // Only hide if cart is actually empty
-        if (cart.length === 0) {
-            cartButton.classList.remove('visible');
-        }
-    }
-
-    // 9. Open/Close Cart Modal
-    function openCartModal() {
-        cartModal.classList.add('open');
-        body.style.overflow = 'hidden'; // Prevent scrolling background
-    }
-
-    function closeCartModal() {
-        cartModal.classList.remove('open');
-        body.style.overflow = ''; // Restore scrolling
-    }
-
-    // --- Event Listeners ---
-
-    // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            localStorage.setItem('theme', 'light');
-            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            saveCart();
+            updateCartUI();
+            showToastNotification('Cart cleared successfully!', 'success');
         }
     });
 
-    // Smooth Scrolling for Navigation
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-                // Optional: Remove active class from all nav links and add to current
-                document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-            }
-        });
-    });
-
-    // Optional: Active nav link on scroll (for when user scrolls, not clicks nav)
-    const sections = document.querySelectorAll('section[id]');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 150; // Offset for header height and some scroll
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        document.querySelectorAll('nav a').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Contact Form Validation
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const age = document.getElementById('age').value;
-
-            if (name === '' || email === '' || message === '') {
-                alert('Please fill in all fields.');
-                return;
-            }
-            if (!isValidEmail(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            alert('Message sent successfully! (This is a placeholder)');
-            gtag("event" , "contact_form_event" , {
-                user_name: name,
-                user_email: email,
-                user_email_length : email.length,
-                user_message: message,
-                user_age: age,
-                submission_count: 1
-            })
-            console.log("event sent successfully")
-            contactForm.reset();
-        });
-    }
-
-    function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    // Category Filtering
-    document.querySelectorAll('.filter-btn').forEach(button => {
-        button.addEventListener('click', (event) => {
-            // Remove active class from all buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            event.target.classList.add('active');
-
-            const category = event.target.dataset.category;
-            // Filter products from the main 'products' array based on the selected category
-            const filteredProducts = category === 'all' ? products : products.filter(p => p.category === category);
-            renderProducts(filteredProducts); // Re-render the grid with filtered products
-        });
-    });
-
-    // Cart Button Click (Open Modal)
-    cartButton.addEventListener('click', openCartModal);
-
-    // Close Cart Modal
-    closeCartButton.addEventListener('click', closeCartModal);
-    // Close modal if user clicks outside of the content
-    window.addEventListener('click', (event) => {
-        if (event.target === cartModal) {
-            closeCartModal();
-        }
-    });
-
-    // Remove Item from Cart (Event delegation for dynamically added buttons)
-    cartItemsContainer.addEventListener('click', (event) => {
-        if (event.target.classList.contains('fa-trash-alt') || event.target.classList.contains('remove-item-btn')) {
-            const productId = parseInt(event.target.closest('.remove-item-btn').dataset.productId);
-            removeFromCart(productId);
-        }
-    });
-
-    // Clear Cart Button
-    clearCartButton.addEventListener('click', clearCart);
-
-    // Checkout Button (Placeholder)
+    // Checkout (placeholder)
     checkoutButton.addEventListener('click', () => {
-        if (cart.length > 0) {
-            alert('Proceeding to checkout! (This is a placeholder)');
-            // In a real app, this would redirect to a checkout page or start a payment process.
-            clearCart(); // Optionally clear cart after "checkout"
-            closeCartModal();
+        if (cart.length === 0) {
+            showToastNotification('Your cart is empty. Add some products to checkout!', 'error');
+            return;
+        }
+        alert('Proceeding to checkout! (This is a demo)');
+        // In a real application, you'd send cart data to a server here
+        cart = []; // Clear cart after "checkout"
+        saveCart();
+        updateCartUI();
+        closeCartButton.click(); // Close the modal
+    });
+
+    function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Initial cart UI update on load
+    updateCartUI();
+
+
+    // --- Form Submission (Contact Form) ---
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent actual form submission
+
+        // Simulate form validation/submission
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (name && email && message) {
+            // Simulate success
+            showFormMessage('Thank you for your message! We will get back to you soon.', 'success');
+            contactForm.reset(); // Clear the form
         } else {
-            alert('Your cart is empty. Please add items before checking out.');
+            // Simulate error
+            showFormMessage('Please fill in all required fields.', 'error');
         }
     });
 
-    // --- Initial Load ---
-    renderProducts(); // Render all products initially
-    updateCartDisplay(); // Update cart display from localStorage on page load
+    function showFormMessage(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = `form-message show ${type}`; // Add 'show' and type classes
+        setTimeout(() => {
+            formMessage.classList.remove('show');
+            formMessage.textContent = ''; // Clear message after fading out
+        }, 5000); // Hide after 5 seconds
+    }
+
+
+    // --- Scroll Reveal Animations ---
+    const scrollRevealElements = document.querySelectorAll('.scroll-reveal, .product-card');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Stop observing once animated
+            }
+        });
+    }, { threshold: 0.1 }); // Trigger when 10% of element is visible
+
+    function applyScrollReveal() {
+        scrollRevealElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    // Initial application of scroll reveal
+    applyScrollReveal();
+
+
+    // --- Toast Notification System ---
+    let toastTimeout;
+    function showToastNotification(message, type = 'info') {
+        let toast = document.querySelector('.toast-notification');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.classList.add('toast-notification');
+            document.body.appendChild(toast);
+        }
+
+        toast.textContent = message;
+        toast.className = 'toast-notification show'; // Reset classes
+        if (type === 'success') {
+            toast.style.backgroundColor = 'var(--success-color-dark)'; // Use dark mode success color
+            toast.style.color = 'white';
+        } else if (type === 'error') {
+            toast.style.backgroundColor = 'var(--danger-color-dark)'; // Use dark mode danger color
+            toast.style.color = 'white';
+        } else { // Default info
+            toast.style.backgroundColor = 'var(--card-background-dark)';
+            toast.style.color = 'var(--text-color-dark)';
+        }
+
+        // Adjust for light mode
+        if (body.classList.contains('light-mode')) {
+             if (type === 'success') {
+                toast.style.backgroundColor = 'var(--success-color-light)';
+                toast.style.color = 'white';
+            } else if (type === 'error') {
+                toast.style.backgroundColor = 'var(--danger-color-light)';
+                toast.style.color = 'white';
+            } else { // Default info
+                toast.style.backgroundColor = 'var(--card-background-light)';
+                toast.style.color = 'var(--text-color-light)';
+            }
+        }
+
+
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000); // Notification visible for 3 seconds
+    }
+
+
+    // --- Shop Now Button functionality ---
+    // If you want the "Shop Now!" button to scroll to products section
+    if (shopNowButton) {
+        shopNowButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                window.scrollTo({
+                    top: productsSection.offsetTop - document.querySelector('.main-header').offsetHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 });

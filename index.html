@@ -9,22 +9,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-      <script type="text/javascript">
-<script>
-window.dataLayer = window.dataLayer || [];
-dataLayer.push({
-    'event': 'page_view',
-    'page_path': window.location.pathname + window.location.search,
-    'page_location': window.location.href,
-    'page_title': document.title,
-    'language': 'en', // Or dynamically set based on site language
-    // User data (if available and GDPR compliant)
-    'user_id': 'USER_ID_IF_LOGGED_IN', // Replace with actual user ID
-    'user_properties': {
-        'user_type': 'guest', // Or 'logged_in', 'returning_customer', etc.
-        'customer_loyalty_tier': 'none' // e.g., 'gold', 'silver'
+   <script>
+window.digitalData = window.digitalData || {};
+
+// General Page Information
+window.digitalData.page = {
+    pageInfo: {
+        pageName: document.title,
+        pageURL: window.location.href,
+        pageCategory: 'homepage', // e.g., 'homepage', 'product page', 'category page', 'checkout page'
+        pageType: 'webpage',
+        language: 'en-US',
+        siteSection: 'main'
+    },
+    attributes: {
+        // Any custom page attributes
     }
-});
+};
+
+// User Information (if available and GDPR compliant)
+window.digitalData.user = {
+    profile: {
+        profileInfo: {
+            userID: 'USER_ID_IF_LOGGED_IN', // Replace with actual user ID
+            customerID: 'CUSTOMER_ID', // Your internal customer ID
+            loggedIn: 'true', // 'true' or 'false'
+            emailHash: 'MD5_HASH_OF_EMAIL' // Hashed email for identity if needed
+        },
+        attributes: {
+            loyaltyTier: 'none', // e.g., 'bronze', 'silver', 'gold'
+            isNewCustomer: 'true' // 'true' or 'false'
+        }
+    }
+};
+
+// Cart Information (if applicable, e.g., on every page load for mini-cart)
+window.digitalData.cart = {
+    cartID: 'CART_ID_123', // Unique ID for the current cart
+    cartTotal: 0.00,
+    currency: 'USD',
+    shippingMethod: '',
+    paymentMethod: '',
+    items: [] // Array of items in the cart
+};
+
+// ... other global data points like environmental data, device info, etc.
+
 </script>
 <script src="https://assets.adobedtm.com/236ca7d75265/92664b794fdb/launch-f7cb3d96e6b6-development.min.js" async></script>
 <body class="dark-mode"> <div id="preloader" class="preloader">
